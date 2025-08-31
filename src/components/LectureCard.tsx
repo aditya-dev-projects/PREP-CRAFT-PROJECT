@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Progress } from "@/components/ui/progress";
-import { ChevronDown, ChevronRight, Code } from "lucide-react";
+import { ChevronDown, ChevronRight, Code, BookOpen } from "lucide-react";
 import { Lecture } from "@/data/dsaCourse";
 import { ProblemRow } from "./ProblemRow";
 import { useNavigate } from "react-router-dom";
@@ -45,12 +45,14 @@ export const LectureCard = ({ lecture, stepId, onToggleProblem }: LectureCardPro
             <Button
               variant="outline"
               size="sm"
-              className="h-6 px-2 text-xs flex items-center gap-1 border-primary/30 hover:bg-primary/10 ml-2"
-              onClick={handlePracticeClick}
-              disabled={lecture.problems.length === 0}
+              className="h-6 px-2 text-xs flex items-center gap-1 border-blue-500/30 hover:bg-blue-500/10 text-blue-500"
+              onClick={(e) => {
+                e.stopPropagation();
+                navigate(`/dsa/notes/${stepId}/${lecture.id}`);
+              }}
             >
-              <Code className="h-3 w-3" />
-              Practice
+              <BookOpen className="h-3 w-3" />
+              Notes
             </Button>
           </div>
           <div className="text-right w-full sm:w-auto sm:min-w-[100px] mt-2 sm:mt-0">
