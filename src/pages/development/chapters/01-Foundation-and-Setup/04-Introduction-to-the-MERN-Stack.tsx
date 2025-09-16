@@ -3,7 +3,7 @@ import React, { FC } from 'react';
 const IntroductionToTheMernStack: FC = () => {
   return (
   <div className="p-6 max-w-4xl mx-auto bg-background text-foreground">
-      <h1 className="text-3xl font-bold mb-6 text-primary"> Chapter 4: Introduction to the MERN Stack</h1>
+      {/* <h1 className="text-3xl font-bold mb-6 text-primary"> Chapter 4: Introduction to the MERN Stack</h1> */}
 
       <p className="mb-4 text-muted-foreground">
         The MERN stack is a popular and powerful collection of technologies used for building modern, full-stack web applications. It's an acronym that stands for the four key technologies that make up its different layers: <strong>MongoDB</strong>, <strong>Express.js</strong>, <strong>React</strong>, and <strong>Node.js</strong>.

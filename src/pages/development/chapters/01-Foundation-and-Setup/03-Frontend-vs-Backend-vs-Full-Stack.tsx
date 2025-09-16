@@ -3,7 +3,7 @@ import React, { FC } from 'react';
 const TopicPage: FC = () => {
   return (
   <div className="p-6 max-w-4xl mx-auto bg-background text-foreground">
-      <h1 className="text-3xl font-bold mb-6 text-primary">Chapter 3: Frontend vs. Backend vs. Full Stack</h1>
+      {/* <h1 className="text-3xl font-bold mb-6 text-primary">Chapter 3: Frontend vs. Backend vs. Full Stack</h1> */}
 
       <p className="mb-4 text-muted-foreground">
         In the world of web development, the work is often divided into two major areas: the <strong>Frontend</strong> and the <strong>Backend</strong>. Understanding the clear distinction between these two is fundamental to understanding how web applications are built. A <strong>Full-Stack</strong> developer is someone who bridges this divide.

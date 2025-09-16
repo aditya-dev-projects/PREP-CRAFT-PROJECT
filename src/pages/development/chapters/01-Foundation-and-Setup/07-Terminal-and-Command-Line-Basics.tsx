@@ -3,7 +3,7 @@ import React, { FC } from 'react';
 const TopicPage: FC = () => {
   return (
   <div className="p-6 max-w-4xl mx-auto bg-background text-foreground">
-      <h1 className="text-3xl font-bold mb-6 text-primary"> Chapter 7: Terminal/Command Line Basics</h1>
+      {/* <h1 className="text-3xl font-bold mb-6 text-primary"> Chapter 7: Terminal/Command Line Basics</h1> */}
 
       <p className="mb-4 text-muted-foreground">
         The Command Line Interface (CLI), often called the terminal or shell, is a powerful text-based interface for interacting with your computer. While graphical user interfaces (GUIs) are intuitive for many tasks, the command line is an essential tool for developers, offering speed, power, and automation that GUIs cannot match. Mastering the basics is a fundamental step in becoming a proficient developer.

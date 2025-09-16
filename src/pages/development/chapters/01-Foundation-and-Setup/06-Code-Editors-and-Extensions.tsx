@@ -3,7 +3,7 @@ import React, { FC } from 'react';
 const TopicPage: FC = () => {
   return (
  <div className="p-6 max-w-4xl mx-auto bg-background text-foreground">
-      <h1 className="text-3xl font-bold mb-6 text-primary"> Chapter 6: Code Editors & Extensions</h1>
+      {/* <h1 className="text-3xl font-bold mb-6 text-primary"> Chapter 6: Code Editors & Extensions</h1> */}
 
       <p className="mb-4 text-muted-foreground">
         A code editor is a developer's most important tool. While you can write code in any plain text editor, a modern code editor acts as an intelligent assistant, providing features that dramatically increase speed, reduce errors, and improve code quality. This chapter focuses on the industry-standard editor, VS Code, and the essential extensions that turn it into a powerhouse for web development.

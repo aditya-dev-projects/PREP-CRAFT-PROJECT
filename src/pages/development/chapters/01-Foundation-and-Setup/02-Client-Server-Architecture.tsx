@@ -3,7 +3,7 @@ import React, { FC } from 'react';
 const ClientServerArchitecture: FC = () => {
   return (
   <div className="p-6 max-w-4xl mx-auto bg-background text-foreground">
-      <h1 className="text-3xl font-bold mb-6 text-primary">Web Development Chapter 2: Client-Server Architecture</h1>
+      {/* <h1 className="text-3xl font-bold mb-6 text-primary">Web Development Chapter 2: Client-Server Architecture</h1> */}
 
       <p className="mb-4 text-muted-foreground">
         The Client-Server model is the fundamental architecture that powers the entire modern internet. It's a distributed application structure that separates tasks and workloads between two main parties: the <strong>Client</strong>, which requests services, and the <strong>Server</strong>, which provides those services.

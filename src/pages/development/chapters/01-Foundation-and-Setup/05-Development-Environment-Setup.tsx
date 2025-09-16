@@ -3,7 +3,7 @@ import React, { FC } from 'react';
 const TopicPage: FC = () => {
   return (
     <div className="p-6 max-w-4xl mx-auto bg-background text-foreground">
-      <h1 className="text-3xl font-bold mb-6 text-primary"> Chapter 5: Development Environment Setup</h1>
+      {/* <h1 className="text-3xl font-bold mb-6 text-primary"> Chapter 5: Development Environment Setup</h1> */}
 
       <p className="mb-4 text-muted-foreground">
         Setting up a proper development environment is the first practical step for any aspiring web developer. A good setup is like a well-organized workshop; it makes your work more efficient, less error-prone, and easier to manage. This chapter covers the essential tools you'll need to install and configure on your computer.

@@ -3,7 +3,7 @@ import React, { FC } from 'react';
 const WhatIsWebDevelopment: FC = () => {
   return (
     <div className="p-6 max-w-4xl mx-auto bg-background text-foreground">
-      <h1 className="text-3xl font-bold mb-6 text-primary">Web Development Chapter 1: What is Web Development?</h1>
+      {/* <h1 className="text-3xl font-bold mb-6 text-primary">Web Development Chapter 1: What is Web Development?</h1> */}
 
       <p className="mb-4 text-muted-foreground">
         Web Development is the work involved in creating and maintaining websites and web applications. It's the "behind-the-scenes" process that makes the websites we use every day—from simple text pages to complex social media platforms—functional, interactive, and visually appealing.
