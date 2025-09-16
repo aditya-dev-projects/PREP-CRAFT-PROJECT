@@ -83,20 +83,6 @@ export const ProblemRow = ({ problem, onToggle }: ProblemRowProps) => {
           </Button>
         )}
         
-        {problem.videoLink && (
-          <Button
-            variant="ghost"
-            size="sm"
-            className="h-8 w-8 p-0 hover:bg-accent text-red-500"
-            onClick={(e) => {
-              e.stopPropagation();
-              window.open(problem.videoLink, '_blank');
-            }}
-          >
-            <Youtube className="h-4 w-4" />
-          </Button>
-        )}
-        
         {problem.practiceLink && (
           <Button
             variant="ghost"
@@ -111,11 +97,6 @@ export const ProblemRow = ({ problem, onToggle }: ProblemRowProps) => {
           </Button>
         )}
         
-        {problem.isFreeProblem && (
-          <Badge variant="outline" className="text-xs border-success text-success">
-            Free
-          </Badge>
-        )}
       </div>
     </div>
   );

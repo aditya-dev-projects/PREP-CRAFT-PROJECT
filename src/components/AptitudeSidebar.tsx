@@ -1,5 +1,5 @@
 import React, { useState, useCallback } from 'react';
-import { Menu, X, ChevronDown } from 'lucide-react'; // <-- Added ChevronDown here
+import { Menu, X, ChevronDown } from 'lucide-react';
 
 interface AptitudeSidebarProps {
   onSelectChapter: (chapter: string) => void;
@@ -22,11 +22,11 @@ const sidebarData = [
       { id: 'probability', title: 'Probability' },
       { id: 'age-problems', title: 'Age Problems' },
       { id: 'partnerships', title: 'Partnerships' },
-      { id: 'allegations-mixtures', title: 'Allegations & Mixtures'},
-      { id: 'chain-rule', title: 'Chain Rule'},
-      { id: 'train-problems', title: 'Train Problems'},
-      { id: 'boats-streams',title: 'Boats & Streams'},
-      { id: 'data-interpretation', title: 'Data Interpretation'}, 
+      { id: 'allegations-mixtures', title: 'Allegations & Mixtures' },
+      { id: 'chain-rule', title: 'Chain Rule' },
+      { id: 'train-problems', title: 'Train Problems' },
+      { id: 'boats-streams', title: 'Boats & Streams' },
+      { id: 'data-interpretation', title: 'Data Interpretation' },
     ],
   },
   {
@@ -40,32 +40,22 @@ const sidebarData = [
       { id: 'directions', title: 'Directions' },
       { id: 'word-pattern', title: 'Word Pattern' },
       { id: 'coding-decoding', title: 'Coding & Decoding' },
-      { id: 'maths-ops', title: 'Mathematical Operations' }, 
-      { id: 'venn-diagram', title: 'Venn Diagrams'},
-      { id: 'visual-reasoning', title: 'Visual Reasoning'},
-      { id: 'paper-cutting-adding', title: 'Paper Cutting & Adding'},
-      { id: 'cubes-dices', title: 'Cubes & Dices'},
-      { id: 'data-sufficency', title: 'Data Sufficency'},
-      
-      
-      
-
-      
-
-
-      
+      { id: 'maths-ops', title: 'Mathematical Operations' },
+      { id: 'venn-diagram', title: 'Venn Diagrams' },
+      { id: 'visual-reasoning', title: 'Visual Reasoning' },
+      { id: 'paper-cutting-adding', title: 'Paper Cutting & Adding' },
+      { id: 'cubes-dices', title: 'Cubes & Dices' },
+      { id: 'data-sufficency', title: 'Data Sufficency' },
     ],
   },
   {
     section: 'Verbal Ability',
     chapters: [
       { id: 'ReadingComp', title: 'Reading Comprehension' },
-      { id: 'SpottingErrors',title:'Spotting Errors'},
+      { id: 'SpottingErrors', title: 'Spotting Errors' },
       { id: 'SentenceFormation', title: 'Sentence Formation' },
-      { id: 'SynnonymAndAntonym', title: 'Synonyms & Antonyms'},
-      { id: 'IdiomsAndPhrases', title: 'Idioms & Phrases'}
-
-      
+      { id: 'SynnonymAndAntonym', title: 'Synonyms & Antonyms' },
+      { id: 'IdiomsAndPhrases', title: 'Idioms & Phrases' },
     ],
   },
 ];
@@ -81,16 +71,19 @@ const AptitudeSidebar: React.FC<AptitudeSidebarProps> = ({ onSelectChapter }) =>
     }));
   }, []);
 
-  const handleSelectChapter = useCallback((chapterId: string) => {
-    onSelectChapter(chapterId);
-    setIsMobileMenuOpen(false);
-  }, [onSelectChapter]);
+  const handleSelectChapter = useCallback(
+    (chapterId: string) => {
+      onSelectChapter(chapterId);
+      setIsMobileMenuOpen(false);
+    },
+    [onSelectChapter]
+  );
 
   return (
     <>
       {/* Mobile Menu Button */}
       <div className="md:hidden p-4 bg-muted border-b border-border">
-        <button 
+        <button
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
           className="p-2 rounded-md hover:bg-background/90 transition-colors"
         >
@@ -108,8 +101,8 @@ const AptitudeSidebar: React.FC<AptitudeSidebarProps> = ({ onSelectChapter }) =>
           {/* Sidebar Header */}
           <div className="p-4 border-b border-border flex justify-between items-center">
             <h2 className="text-xl font-bold text-primary">Topics</h2>
-            <button 
-              onClick={() => setIsMobileMenuOpen(false)} 
+            <button
+              onClick={() => setIsMobileMenuOpen(false)}
               className="p-2 rounded-md hover:bg-background/90 md:hidden"
             >
               <X size={24} />
@@ -127,7 +120,9 @@ const AptitudeSidebar: React.FC<AptitudeSidebarProps> = ({ onSelectChapter }) =>
                     className="w-full text-left px-3 py-2 rounded-md bg-background hover:bg-background/90 focus:outline-none transition-colors duration-200 font-semibold flex justify-between items-center"
                   >
                     <span>{section.section}</span>
-                    <ChevronDown className={`w-4 h-4 transition-transform ${openSections[section.section] ? 'rotate-180' : ''}`} />
+                    <ChevronDown
+                      className={`w-4 h-4 transition-transform ${openSections[section.section] ? 'rotate-180' : ''}`}
+                    />
                   </button>
 
                   {/* Chapters (expand/collapse) */}
@@ -140,7 +135,10 @@ const AptitudeSidebar: React.FC<AptitudeSidebarProps> = ({ onSelectChapter }) =>
                       <li key={chapter.id} className="mb-1">
                         <button
                           onClick={() => handleSelectChapter(chapter.id)}
-                          className="w-full text-left px-3 py-2 rounded-md hover:bg-accent focus:outline-none focus:bg-accent transition-colors duration-200 text-sm"
+                          className="w-full text-left px-3 py-2 rounded-md 
+                            text-foreground hover:bg-accent hover:text-accent-foreground 
+                            focus:outline-none focus:bg-accent focus:text-accent-foreground 
+                            transition-colors duration-200 text-sm"
                         >
                           {chapter.title}
                         </button>
@@ -153,10 +151,10 @@ const AptitudeSidebar: React.FC<AptitudeSidebarProps> = ({ onSelectChapter }) =>
           </div>
         </div>
       </aside>
-      
+
       {/* Overlay to close sidebar when clicking outside on mobile */}
       {isMobileMenuOpen && (
-        <div 
+        <div
           className="fixed inset-0 bg-black opacity-50 z-40 md:hidden"
           onClick={() => setIsMobileMenuOpen(false)}
         ></div>

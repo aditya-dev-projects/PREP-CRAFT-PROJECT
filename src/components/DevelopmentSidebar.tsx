@@ -1,4 +1,3 @@
-
 import React, { useState, useCallback } from 'react';
 import { Link } from 'react-router-dom';
 import { Menu, X, ChevronDown } from 'lucide-react';
@@ -62,7 +61,9 @@ const DevelopmentSidebar: React.FC = () => {
                     className="w-full text-left px-3 py-2 rounded-md bg-background hover:bg-background/90 focus:outline-none transition-colors duration-200 font-semibold flex justify-between items-center"
                   >
                     <span className="text-sm">{chapter.title}</span>
-                    <ChevronDown className={`w-4 h-4 transition-transform ${openChapters[chapter.id] ? 'rotate-180' : ''}`} />
+                    <ChevronDown
+                      className={`w-4 h-4 transition-transform ${openChapters[chapter.id] ? 'rotate-180' : ''}`}
+                    />
                   </button>
 
                   {/* Sub-chapters (expand/collapse) */}
@@ -76,21 +77,29 @@ const DevelopmentSidebar: React.FC = () => {
                         <Link
                           to={`/development/${chapter.folder}/${subChapter.file}`}
                           onClick={handleSelect}
-                          className="block w-full text-left px-3 py-2 rounded-md hover:bg-accent focus:outline-none focus:bg-accent transition-colors duration-200 text-xs"
+                          className="block w-full text-left px-3 py-2 rounded-md 
+                            text-foreground hover:bg-accent hover:text-accent-foreground 
+                            focus:outline-none focus:bg-accent focus:text-accent-foreground 
+                            transition-colors duration-200 text-xs"
                         >
                           {subChapter.title}
                         </Link>
                       </li>
                     ))}
-                     <li className="mb-1">
-                        <Link
-                          to={`/development/quiz/${chapter.id}`}
-                          onClick={handleSelect}
-                          className="block w-full text-left px-3 py-2 rounded-md bg-yellow-200 hover:bg-yellow-300 focus:outline-none focus:bg-yellow-300 dark:bg-yellow-700 dark:hover:bg-yellow-800 transition-colors duration-200 text-xs font-bold"
-                        >
-                          Quiz: {chapter.title}
-                        </Link>
-                      </li>
+
+                    {/* Quiz Link */}
+                    <li className="mb-1">
+                      <Link
+                        to={`/development/quiz/${chapter.id}`}
+                        onClick={handleSelect}
+                        className="block w-full text-left px-3 py-2 rounded-md 
+                          bg-yellow-200 hover:bg-yellow-300 
+                          dark:bg-yellow-700 dark:hover:bg-yellow-800 
+                          transition-colors duration-200 text-xs font-bold text-foreground"
+                      >
+                        Quiz: {chapter.title}
+                      </Link>
+                    </li>
                   </ul>
                 </div>
               ))}
