@@ -58,8 +58,8 @@ export const developmentCourse: { title: string; chapters: Chapter[] } = {
       folder: '03-Frontend-Fundamentals',
       subChapters: [ 
         { id: '3.1', title: 'HTML5 Essentials & Semantic Elements', file: '01-html5-essentials-and-semantic-elements' },
-        { id: '3.2', title: 'HTML Forms & Input Validation', file: '02-html-forms-and-input-validation' },
-        { id: '3.3', title: 'CSS3 Fundamentals & Selectors', file: '03-css3-fundamentals-and-selectors' },
+        { id: '3.2', title: 'HTML Complete Guide', file: '02-html-complete-guide' },
+        { id: '3.3', title: 'CSS3 Complete Guide', file: '03-css-complete-guide' },
         { id: '3.4', title: 'CSS Layout (Flexbox & Grid)', file: '04-css-layout-(flexbox-and-grid)' },
         { id: '3.5', title: 'CSS Animations & Transitions', file: '05-css-animations-and-transitions' },
         { id: '3.6', title: 'Responsive Design & Media Queries', file: '06-responsive-design-and-media-queries' },

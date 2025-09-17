@@ -9,3 +9,4 @@ const TopicPage: FC = () => {
 };
 
 export default TopicPage;
+// Make notes for this JavaScript Basics (Variables, Data Types, Operators) in same way and give same react code for this and dont include quiz component in the code and add notes line by line
