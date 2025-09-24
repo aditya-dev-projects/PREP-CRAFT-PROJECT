@@ -48,7 +48,7 @@ const LandingPage = () => {
                 </h3>
                 <p className="text-muted-foreground">
                   Learn and practice in 18 chapters with a built-in
-                  multi-language code editor. Track your progress as you go.
+                  multi-language code editor. Track your progress.
                 </p>
               </Link>
               <Link

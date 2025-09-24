@@ -8,7 +8,6 @@ import ChapterIndex from "./pages/dsa/ChapterIndex";
 import ChapterDetail from "./pages/dsa/ChapterDetail";
 import Auth from "./pages/Auth";
 import NotFound from "./pages/NotFound";
-import PracticePage from "./pages/dsa/PracticePage";
 import LandingPage from "./pages/LandingPage";
 import Index from "./pages/Index";
 import ProtectedRoute from "./components/ProtectedRoute";
@@ -17,7 +16,6 @@ import DevelopmentPage from "./pages/development/DevelopmentPage";
 import AptitudePage from "./pages/aptitude/AptitudePage";
 import AptitudeChapterDetail from "./pages/aptitude/AptitudeChapterDetail";
 import DevelopmentChapterDetail from "./pages/development/DevelopmentChapterDetail";
-import NotesPage from "./pages/dsa/NotesPage";
 
 const queryClient = new QueryClient();
 
@@ -39,11 +37,12 @@ const App = () => (
               </Route>
               <Route path="/aptitude" element={<AptitudePage />} />
               <Route path="/aptitude/:chapterId" element={<AptitudeChapterDetail />} />
-              <Route path="/dsa" element={<Index />} />
-              <Route path="/chapters" element={<ChapterIndex />} />
-              <Route path="/chapter/:chapterId" element={<ChapterDetail />} />
-              <Route path="/practice/:problemId" element={<PracticePage />} />
-              <Route path="/dsa/notes/:chapterId/:lectureId" element={<NotesPage />} />
+              <Route path="/dsa" element={<Index />}>
+                <Route path="notes/:chapterId/:subChapterId" element={<ChapterDetail />} />
+                <Route path="quiz/:subChapterId" element={<ChapterDetail />} />
+                <Route index element={<div className="text-center text-2xl font-bold">Welcome to DSA! Select a chapter from the sidebar.</div>} />
+              </Route>
+              
             </Route>
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
             <Route path="*" element={<NotFound />} />

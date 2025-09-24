@@ -1,106 +1,13 @@
-import { useDSAProgress } from "@/hooks/useDSAProgress";
-import { Header } from "@/components/Header";
-import { ProgressCard } from "@/components/ProgressCard";
-import { StepCard } from "@/components/StepCard";
-import { toast } from "@/hooks/use-toast";
+import { Outlet } from 'react-router-dom';
+import DSASidebar from '../components/DSASidebar'; // Adjust this path if needed
 
 const Index = () => {
-  const { 
-    course, 
-    toggleProblemStatus, 
-    getTotalProgress, 
-    getDifficultyProgress, 
-    resetProgress 
-  } = useDSAProgress();
-
-  const totalProgress = getTotalProgress();
-  const difficultyProgress = getDifficultyProgress();
-
-  const handleResetProgress = () => {
-    resetProgress();
-    toast({
-      title: "Progress Reset",
-      description: "Your learning progress has been reset successfully.",
-    });
-  };
-
   return (
-    <div className="min-h-screen bg-background">
-      <Header 
-        totalProgress={totalProgress} 
-        onResetProgress={handleResetProgress}
-      />
-      
-      <div className="container mx-auto px-4 sm:px-6 py-8">
-        {/* Progress Overview */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 mb-12">
-          <ProgressCard
-            title="Total Progress"
-            completed={totalProgress.completedProblems}
-            total={totalProgress.totalProblems}
-            variant="total"
-          />
-          <ProgressCard
-            title="Easy"
-            completed={difficultyProgress.easy.completed}
-            total={difficultyProgress.easy.total}
-            variant="easy"
-          />
-          <ProgressCard
-            title="Medium"
-            completed={difficultyProgress.medium.completed}
-            total={difficultyProgress.medium.total}
-            variant="medium"
-          />
-          <ProgressCard
-            title="Hard"
-            completed={difficultyProgress.hard.completed}
-            total={difficultyProgress.hard.total}
-            variant="hard"
-          />
-        </div>
-
-        {/* Learning Path */}
-        <div className="space-y-8">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-4">Learning Path</h2>
-            <p className="text-base sm:text-lg text-muted-foreground max-w-2xl mx-auto">
-              Complete all {totalProgress.totalProblems} problems across {course.length} comprehensive chapters. 
-              Each chapter builds upon the previous one to give you a solid foundation.
-            </p>
-          </div>
-          
-          <div className="grid gap-4 sm:gap-6">
-            {course.map((step, index) => (
-              <div key={step.id} className="relative">
-                <div className="flex items-center gap-4 mb-4">
-                  <div className="flex-shrink-0 w-10 h-10 sm:w-12 sm:h-12 bg-gradient-primary rounded-full flex items-center justify-center text-primary-foreground font-bold text-base sm:text-lg">
-                    {index + 1}
-                  </div>
-                  <div className="flex-1">
-                    <h3 className="text-lg sm:text-xl font-semibold text-foreground">Chapter {index + 1}</h3>
-                  </div>
-                </div>
-                <StepCard
-                  step={step}
-                  onToggleProblem={toggleProblemStatus}
-                />
-              </div>
-            ))}
-          </div>
-        </div>
-
-        {/* Motivational Footer */}
-        <div className="mt-20 text-center p-6 sm:p-8 bg-gradient-accent rounded-xl shadow-xl">
-          <h3 className="text-2xl sm:text-3xl font-bold text-accent-foreground mb-4">
-            Keep Going! 🚀
-          </h3>
-          <p className="text-accent-foreground/90 max-w-2xl mx-auto text-base sm:text-lg">
-            Every problem you solve brings you one step closer to mastering DSA. 
-            Consistency is key - dedicate time daily and watch your skills grow exponentially!
-          </p>
-        </div>
-      </div>
+    <div className="flex h-screen bg-background">
+      <DSASidebar />
+      <main className="flex-1 overflow-y-auto p-4 md:p-8">
+        <Outlet />
+      </main>
     </div>
   );
 };
