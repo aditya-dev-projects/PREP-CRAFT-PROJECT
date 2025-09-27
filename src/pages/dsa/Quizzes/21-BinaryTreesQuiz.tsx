@@ -1,6 +1,6 @@
 import React from 'react';
 
-const TwoDArraysQuiz: React.FC = () => {
+const BinaryTreesQuiz: React.FC = () => {
   return (
     <div>
       <p>Quiz is loading...</p>
@@ -8,4 +8,4 @@ const TwoDArraysQuiz: React.FC = () => {
   );
 };
 
-export default TwoDArraysQuiz;
+export default BinaryTreesQuiz;

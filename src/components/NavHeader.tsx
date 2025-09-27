@@ -38,6 +38,9 @@ const NavHeader = () => {
         <Link to="/aptitude" className="text-sm font-medium hover:underline underline-offset-4">
           Aptitude
         </Link>
+        {/* <Link to="/Fundametals" className="text-sm font-medium hover:underline underline-offset-4">
+          Language Fundamentals 
+        </Link> */}
         <ThemeToggle />
         {user ? (
           <DropdownMenu>
