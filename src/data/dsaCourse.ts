@@ -112,7 +112,7 @@ export const dsaCourse: { title: string; chapters: Chapter[]; quizzes: { id: str
       folder: 'chapter-09',
       subChapters: [
         { id: '9.1', title: 'Basic DP', file: '01-BasicDp', type: 'note' },
-        { id: '9.2', title: 'Advanced DP', file: '02-AdvancedDp', type: 'note' },
+        { id: '9.2', title: 'Advance DP', file: '02-AdvancedDp', type: 'note' },
       ],
     },
     // {

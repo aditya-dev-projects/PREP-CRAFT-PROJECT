@@ -81,13 +81,14 @@ export const developmentCourse: { title: string; chapters: Chapter[] } = {
         { id: '4.7', title: 'ES6+ Features (Arrow Functions, Destructuring, Modules)', file: '07-es6-features-(arrow-functions-destructuring-modules)' },
         { id: '4.8', title: 'Asynchronous JavaScript (Promises, Async/Await)', file: '08-asynchronous-javascript-(promises-async-await)' },
         { id: '4.9', title: 'Error Handling & Debugging', file: '09-error-handling-and-debugging' },
-        { id: '4.10', title: 'JavaScript Mini Projects', file: '10-javascript-mini-projects' }
+        { id: '4.10', title: 'Js-MiniProject(Stone,Paper,Scissor)', file: '10-javascript-mini-projects' },
+        { id: '4.11', title: 'Mini Project Preview' , file: '11-mini-project-preview'}
       ]
     },
     {
       id: 'chapter-5',
       title: 'Chapter 5: CSS Frameworks & UI Libraries',
-      folder: '05-CSS-Frameworks-And-UI-Libraries',
+      folder: '05-CSS-Frameworks-and-UI-Libraries',
       subChapters: [
         { id: '5.1', title: 'Introduction to CSS Frameworks', file: '01-introduction-to-css-frameworks' },
         { id: '5.2', title: 'Bootstrap Fundamentals', file: '02-bootstrap-fundamentals' },
