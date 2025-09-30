@@ -25,19 +25,22 @@ const NavHeader = () => {
       <Link to="/" className="flex items-center justify-center">
         <Logo />
       </Link>
-      <nav className="ml-auto hidden md:flex items-center gap-4 sm:gap-6">
-        <Link to="/" className="text-sm font-medium hover:underline underline-offset-4">
+      <nav className="ml-auto hidden md:flex items-center gap-2 sm:gap-6">
+        <Link to="/" className="text-sm p-2  font-medium hover:underline underline-offset-4">
           Home
         </Link>
-        <Link to="/dsa" className="text-sm font-medium hover:underline underline-offset-4">
+        <Link to="/dsa" className="text-sm p-2 font-medium hover:underline underline-offset-4">
           DSA
         </Link>
-        <Link to="/development" className="text-sm font-medium hover:underline underline-offset-4">
+        <Link to="/development" className="text-sm p-2 font-medium hover:underline underline-offset-4">
           Development
         </Link>
         <Link to="/aptitude" className="text-sm font-medium hover:underline underline-offset-4">
           Aptitude
         </Link>
+        {/* <Link to="/Fundametals" className="text-sm font-medium hover:underline underline-offset-4">
+          Language Fundamentals 
+        </Link> */}
         <ThemeToggle />
         {user ? (
           <DropdownMenu>
