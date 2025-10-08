@@ -1,9 +1,6 @@
 import React, { useState, useCallback } from 'react';
+import { Link } from 'react-router-dom';
 import { Menu, X, ChevronDown } from 'lucide-react';
-
-interface AptitudeSidebarProps {
-  onSelectChapter: (chapter: string) => void;
-}
 
 const sidebarData = [
   {
@@ -60,7 +57,7 @@ const sidebarData = [
   },
 ];
 
-const AptitudeSidebar: React.FC<AptitudeSidebarProps> = ({ onSelectChapter }) => {
+const AptitudeSidebar: React.FC = () => {
   const [openSections, setOpenSections] = useState<{ [key: string]: boolean }>({});
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
@@ -71,13 +68,9 @@ const AptitudeSidebar: React.FC<AptitudeSidebarProps> = ({ onSelectChapter }) =>
     }));
   }, []);
 
-  const handleSelectChapter = useCallback(
-    (chapterId: string) => {
-      onSelectChapter(chapterId);
-      setIsMobileMenuOpen(false);
-    },
-    [onSelectChapter]
-  );
+  const handleCloseMobileMenu = useCallback(() => {
+    setIsMobileMenuOpen(false);
+  }, []);
 
   return (
     <>
@@ -133,15 +126,16 @@ const AptitudeSidebar: React.FC<AptitudeSidebarProps> = ({ onSelectChapter }) =>
                   >
                     {section.chapters.map((chapter) => (
                       <li key={chapter.id} className="mb-1">
-                        <button
-                          onClick={() => handleSelectChapter(chapter.id)}
+                        <Link
+                          to={`/aptitude/${chapter.id}`}
+                          onClick={handleCloseMobileMenu}
                           className="w-full text-left px-3 py-2 rounded-md 
                             text-foreground hover:bg-accent hover:text-accent-foreground 
                             focus:outline-none focus:bg-accent focus:text-accent-foreground 
-                            transition-colors duration-200 text-sm"
+                            transition-colors duration-200 text-sm block"
                         >
                           {chapter.title}
-                        </button>
+                        </Link>
                       </li>
                     ))}
                   </ul>

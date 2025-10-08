@@ -25,46 +25,22 @@ const NavHeader = () => {
       <Link to="/" className="flex items-center justify-center">
         <Logo />
       </Link>
-      <nav className="ml-auto hidden md:flex items-center gap-4 sm:gap-6">
-        <Link to="/" className="text-sm font-medium hover:underline underline-offset-4">
+      <nav className="ml-auto hidden md:flex items-center sm:gap-6">
+        <Link to="/" className="text-sm p-2  font-medium hover:underline underline-offset-4">
           Home
         </Link>
-        <Link to="/dsa" className="text-sm font-medium hover:underline underline-offset-4">
+        <Link to="/dsa" className="text-sm p-2 font-medium hover:underline underline-offset-4">
           DSA
         </Link>
-        <Link to="/development" className="text-sm font-medium hover:underline underline-offset-4">
+        <Link to="/development" className="text-sm p-2 font-medium hover:underline underline-offset-4">
           Development
         </Link>
         <Link to="/aptitude" className="text-sm font-medium hover:underline underline-offset-4">
           Aptitude
         </Link>
-        
-        {/* Prepare Dropdown Menu */}
-<DropdownMenu>
-  <DropdownMenuTrigger asChild>
-    <button className="text-sm font-medium hover:underline underline-offset-4 bg-transparent border-none cursor-pointer flex items-center gap-1">
-      Prepare <ChevronDown className="h-4 w-4" />
-    </button>
-  </DropdownMenuTrigger>
-  <DropdownMenuContent align="start">
-    <DropdownMenuItem asChild>
-      <Link to="/programming-languages" className="cursor-pointer w-full">
-        Programming Languages
-      </Link>
-    </DropdownMenuItem>
-    <DropdownMenuItem asChild>
-      <Link to="/career-development" className="cursor-pointer w-full">
-        Career Development
-      </Link>
-    </DropdownMenuItem>
-    <DropdownMenuItem asChild>
-      <Link to="/career-development" className="cursor-pointer w-full">
-        CS-Fundamentals 
-      </Link>
-    </DropdownMenuItem>
-  </DropdownMenuContent>
-</DropdownMenu>
-
+        {/* <Link to="/Fundametals" className="text-sm font-medium hover:underline underline-offset-4">
+          Language Fundamentals 
+        </Link> */}
         <ThemeToggle />
         {user ? (
           <DropdownMenu>
