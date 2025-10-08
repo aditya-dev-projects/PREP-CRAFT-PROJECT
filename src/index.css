@@ -17,18 +17,20 @@ All colors MUST be HSL.
     --popover: 214 32% 10%;
     --popover-foreground: 213 31% 91%;
 
-    --primary: 217 91% 60%;
-    --primary-foreground: 213 31% 91%;
+    --primary: 216, 33.33%, 94.12%; /* This is hols blue changed to white */ 
+    --primary-foreground: 208.42, 100%, 7.45%; /* This is button text colour only */
     --primary-glow: 217 91% 70%;
+    --heading-foreground: 0 0% 100%; /* This is for all kinds of h2 headings colour  */
 
-    --secondary: 214 32% 15%;
+
+  --secondary: 214 32% 15%; /* This is light kind of blue*/ 
     --secondary-foreground: 213 31% 91%;
 
-    --muted: 214 32% 15%;
+    --muted: 214 32% 15%;   /* Secondary and this muted is same */
     --muted-foreground: 217 10% 64%;
 
-    --accent: 217 91% 65%;
-    --accent-foreground: 210 100% 6%;
+    --accent: 196.88, 30.77%, 20.39%; /* Updated now just from this 5593F7 and this is only sidebar hovering colour from chapters block*/
+    --accent-foreground: 216, 33.33%, 94.12%;
 
     --destructive: 0 75% 60%;
     --destructive-foreground: 210 100% 6%;
@@ -69,6 +71,15 @@ All colors MUST be HSL.
     --sidebar-accent-foreground: 0 0% 100%;
     --sidebar-border: 220 13% 91%;
     --sidebar-ring: 217.2 91.2% 59.8%;
+
+    :root {
+  
+  
+  /* Quiz-specific colors */
+  --quiz-option-selected: 217 91% 60%; /* Bright blue for selected */
+  --quiz-option-selected-foreground: 0 0% 100%; /* White text */
+  --quiz-option-hover: 217 91% 50%; /* Slightly darker blue for hover */
+}
   }
 
   .light {
@@ -83,9 +94,10 @@ All colors MUST be HSL.
     --popover: 0 0% 100%;
     --popover-foreground: 214 32% 15%;
 
-    --primary: 217 91% 60%;
-    --primary-foreground: 214 32% 15%;
+    --primary: 208.42, 100%, 7.45%;  /* Button in light mode */
+    --primary-foreground:216, 33.33%, 94.12%; /* Button text colour only  */
     --primary-glow: 217 91% 70%;
+    --heading-foreground: 208.42, 100%, 7.45%;  /* h2 headings colour  */
 
     --secondary: 217 32% 94%;
     --secondary-foreground: 214 32% 15%;
@@ -93,7 +105,7 @@ All colors MUST be HSL.
     --muted: 217 32% 94%;
     --muted-foreground: 217 10% 30%;
 
-    --accent: 217 91% 65%;
+    --accent: 210.97, 100%, 6.08%;
     --accent-foreground: 0 0% 100%;
 
     --destructive: 0 75% 60%;
@@ -122,6 +134,15 @@ All colors MUST be HSL.
     background-color: hsl(var(--sidebar-accent));
     color: hsl(var(--sidebar-accent-foreground)); /* Text becomes visible */
   }
+
+.light {
+  /* ... existing variables ... */
+  
+  /* Quiz-specific colors */
+  --quiz-option-selected: 217 91% 60%; /* Same bright blue for border */
+  --quiz-option-selected-foreground: 214 32% 15%; /* Dark text for light mode */
+  --quiz-option-hover: 217 91% 60%; /* Same blue for hover border */
+}
 }
 
 @layer base {
@@ -145,6 +166,11 @@ All colors MUST be HSL.
 
   h2 {
     @apply text-3xl mt-6 mb-3;
+  }
+
+    /* ✅ Override only h2 elements that use text-primary-foreground */
+  h2.text-primary-foreground {
+    @apply text-heading-foreground;
   }
 
   h3 {
@@ -177,4 +203,22 @@ All colors MUST be HSL.
 .dark .sidebar-item.active {
   background-color: hsl(var(--sidebar-accent));
   color: hsl(var(--sidebar-accent-foreground)) !important;
+}
+
+@keyframes scroll-left {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.logo-slider {
+  display: flex;
+  width: max-content;
+}
+
+.logo-slider:hover {
+  animation: scroll-left 30s linear infinite;
 }

@@ -12,7 +12,7 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 import { useState } from "react";
-import { Menu } from "lucide-react";
+import { Menu, ChevronDown } from "lucide-react";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import Logo from "./Logo";
 
@@ -38,9 +38,33 @@ const NavHeader = () => {
         <Link to="/aptitude" className="text-sm font-medium hover:underline underline-offset-4">
           Aptitude
         </Link>
-        {/* <Link to="/Fundametals" className="text-sm font-medium hover:underline underline-offset-4">
-          Language Fundamentals 
-        </Link> */}
+        
+        {/* Prepare Dropdown Menu */}
+<DropdownMenu>
+  <DropdownMenuTrigger asChild>
+    <button className="text-sm font-medium hover:underline underline-offset-4 bg-transparent border-none cursor-pointer flex items-center gap-1">
+      Prepare <ChevronDown className="h-4 w-4" />
+    </button>
+  </DropdownMenuTrigger>
+  <DropdownMenuContent align="start">
+    <DropdownMenuItem asChild>
+      <Link to="/programming-languages" className="cursor-pointer w-full">
+        Programming Languages
+      </Link>
+    </DropdownMenuItem>
+    <DropdownMenuItem asChild>
+      <Link to="/career-development" className="cursor-pointer w-full">
+        Career Development
+      </Link>
+    </DropdownMenuItem>
+    <DropdownMenuItem asChild>
+      <Link to="/career-development" className="cursor-pointer w-full">
+        CS-Fundamentals 
+      </Link>
+    </DropdownMenuItem>
+  </DropdownMenuContent>
+</DropdownMenu>
+
         <ThemeToggle />
         {user ? (
           <DropdownMenu>
@@ -70,10 +94,10 @@ const NavHeader = () => {
         ) : (
           <>
             <Link to="/auth">
-              <Button variant="outline">Login</Button>
+              <Button variant="outline" className="border-2 hover:border-[hsl(var(--quiz-option-selected))] transition-colors">Login</Button>
             </Link>
             <Link to="/auth">
-              <Button>Sign Up</Button>
+              <Button variant="outline" className="border-2 hover:border-[hsl(var(--quiz-option-selected))] transition-colors">Sign Up</Button>
             </Link>
           </>
         )}
@@ -104,6 +128,21 @@ const NavHeader = () => {
               <Link to="/aptitude" className="text-lg font-medium hover:underline underline-offset-4" onClick={() => setIsOpen(false)}>
                 Aptitude
               </Link>
+              
+              {/* Mobile Prepare Section */}
+              <div className="border-t pt-4">
+                <p className="text-sm font-semibold mb-2 px-2">Prepare</p>
+                <Link to="/programming-languages" className="text-lg font-medium hover:underline underline-offset-4 block pl-4" onClick={() => setIsOpen(false)}>
+                  Programming Languages
+                </Link>
+                <Link to="/career-development" className="text-lg font-medium hover:underline underline-offset-4 block pl-4 mt-2" onClick={() => setIsOpen(false)}>
+                  Career Development
+                </Link>
+                <Link to="/career-development" className="text-lg font-medium hover:underline underline-offset-4 block pl-4 mt-2" onClick={() => setIsOpen(false)}>
+                  CS-Fundamentals
+                </Link>
+              </div>
+
               {user ? (
                 <div className="border-t pt-4">
                   <div className="flex items-center gap-4 px-4 mb-4">
@@ -118,17 +157,17 @@ const NavHeader = () => {
                       </p>
                     </div>
                   </div>
-                  <Button variant="outline" className="w-full" onClick={() => { signOut(); setIsOpen(false); }}>
+                  <Button variant="outline" className="w-full border-2 hover:border-[hsl(var(--quiz-option-selected))] transition-colors" onClick={() => { signOut(); setIsOpen(false); }}>
                     Log out
                   </Button>
                 </div>
               ) : (
                 <div className="border-t pt-4 space-y-2">
                   <Link to="/auth" onClick={() => setIsOpen(false)}>
-                    <Button variant="outline" className="w-full">Login</Button>
+                    <Button variant="outline" className="w-full border-2 hover:border-[hsl(var(--quiz-option-selected))] transition-colors">Login</Button>
                   </Link>
                   <Link to="/auth" onClick={() => setIsOpen(false)}>
-                    <Button className="w-full">Sign Up</Button>
+                    <Button variant="outline" className="w-full border-2 hover:border-[hsl(var(--quiz-option-selected))] transition-colors">Sign Up</Button>
                   </Link>
                 </div>
               )}

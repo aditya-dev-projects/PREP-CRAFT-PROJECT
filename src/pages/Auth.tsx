@@ -66,10 +66,10 @@ export default function Auth() {
         <div className="text-center space-y-2">
           <div className="inline-flex items-center gap-2 text-primary mb-4">
             <BookOpen className="h-8 w-8" />
-            <h1 className="text-2xl font-bold">DSA Master</h1>
+            <h1 className="text-2xl font-bold">PREPCRAFT</h1>
           </div>
           <p className="text-muted-foreground">
-            Master Data Structures & Algorithms with our comprehensive learning platform
+            Welcome To One Stop Placement Prepration Platform 
           </p>
         </div>
 
