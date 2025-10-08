@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { useAuth } from "@/hooks/useAuth";
+import Logo from "@/components/Logo";
 
 const LandingPage = () => {
   const { user } = useAuth();
@@ -19,13 +20,65 @@ const LandingPage = () => {
                 with structured content and practice tools.
               </p>
               <Link to={getStartedLink}>
-                <button className="mt-4 inline-flex h-10 items-center justify-center rounded-md bg-primary px-8 text-sm font-medium text-primary-foreground shadow transition-colors hover:bg-primary/90 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50">
+                <button className="mt-4 inline-flex h-10 items-center justify-center rounded-md bg-primary px-8 text-sm font-medium text-primary-foreground shadow transition-colors  focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50">
                   Sign up to start your journey today.
                 </button>
               </Link>
             </div>
           </div>
         </section>
+
+        {/* Companies Section - Add this before the footer */}
+<section className="w-full py-12 md:py-20  overflow-hidden">
+  <div className="container px-4 md:px-6 mb-8">
+    <h2 className="text-3xl font-bold tracking-tighter text-center sm:text-4xl md:text-5xl mb-4">
+      Join with us and get hired by dream companies
+    </h2>
+    {/* <p className="text-center text-muted-foreground text-lg">
+      Students using PrepCraft have been placed in top tech companies
+    </p> */}
+  </div>
+  
+  {/* Infinite Scrolling Logos */}
+  <div className="relative overflow-hidden bg-background/50 py-8">
+    <div className="logo-slider group">
+      <div className="flex items-center space-x-16 px-8">
+        <img src="https://logo.clearbit.com/google.com" alt="Google" className="h-12 w-auto object-contain opacity-70 hover:opacity-100 transition-opacity" />
+        <img src="https://logo.clearbit.com/meta.com" alt="Meta" className="h-12 w-auto object-contain opacity-70 hover:opacity-100 transition-opacity" />
+        <img src="https://logo.clearbit.com/amazon.com" alt="Amazon" className="h-12 w-auto object-contain opacity-70 hover:opacity-100 transition-opacity" />
+        <img src="https://logo.clearbit.com/apple.com" alt="Apple" className="h-12 w-auto object-contain opacity-70 hover:opacity-100 transition-opacity" />
+        <img src="https://logo.clearbit.com/netflix.com" alt="Netflix" className="h-12 w-auto object-contain opacity-70 hover:opacity-100 transition-opacity" />
+        <img src="https://logo.clearbit.com/microsoft.com" alt="Microsoft" className="h-12 w-auto object-contain opacity-70 hover:opacity-100 transition-opacity" />
+        <img src="https://logo.clearbit.com/tcs.com" alt="TCS" className="h-12 w-auto object-contain opacity-70 hover:opacity-100 transition-opacity" />
+        <img src="https://logo.clearbit.com/infosys.com" alt="Infosys" className="h-12 w-auto object-contain opacity-70 hover:opacity-100 transition-opacity" />
+        <img src="https://logo.clearbit.com/wipro.com" alt="Wipro" className="h-12 w-auto object-contain opacity-70 hover:opacity-100 transition-opacity" />
+        <img src="https://logo.clearbit.com/accenture.com" alt="Accenture" className="h-12 w-auto object-contain opacity-70 hover:opacity-100 transition-opacity" />
+        <img src="https://logo.clearbit.com/cognizant.com" alt="Cognizant" className="h-12 w-auto object-contain opacity-70 hover:opacity-100 transition-opacity" />
+        <img src="https://logo.clearbit.com/ibm.com" alt="IBM" className="h-12 w-auto object-contain opacity-70 hover:opacity-100 transition-opacity" />
+        <img src="https://logo.clearbit.com/oracle.com" alt="Oracle" className="h-12 w-auto object-contain opacity-70 hover:opacity-100 transition-opacity" />
+        <img src="https://logo.clearbit.com/adobe.com" alt="Adobe" className="h-12 w-auto object-contain opacity-70 hover:opacity-100 transition-opacity" />
+      </div>
+      
+      {/* Duplicate for seamless loop */}
+      <div className="flex items-center space-x-16 px-8">
+        <img src="https://logo.clearbit.com/google.com" alt="Google" className="h-12 w-auto object-contain opacity-70 hover:opacity-100 transition-opacity" />
+        <img src="https://logo.clearbit.com/meta.com" alt="Meta" className="h-12 w-auto object-contain opacity-70 hover:opacity-100 transition-opacity" />
+        <img src="https://logo.clearbit.com/amazon.com" alt="Amazon" className="h-12 w-auto object-contain opacity-70 hover:opacity-100 transition-opacity" />
+        <img src="https://logo.clearbit.com/apple.com" alt="Apple" className="h-12 w-auto object-contain opacity-70 hover:opacity-100 transition-opacity" />
+        <img src="https://logo.clearbit.com/netflix.com" alt="Netflix" className="h-12 w-auto object-contain opacity-70 hover:opacity-100 transition-opacity" />
+        <img src="https://logo.clearbit.com/microsoft.com" alt="Microsoft" className="h-12 w-auto object-contain opacity-70 hover:opacity-100 transition-opacity" />
+        <img src="https://logo.clearbit.com/tcs.com" alt="TCS" className="h-12 w-auto object-contain opacity-70 hover:opacity-100 transition-opacity" />
+        <img src="https://logo.clearbit.com/infosys.com" alt="Infosys" className="h-12 w-auto object-contain opacity-70 hover:opacity-100 transition-opacity" />
+        <img src="https://logo.clearbit.com/wipro.com" alt="Wipro" className="h-12 w-auto object-contain opacity-70 hover:opacity-100 transition-opacity" />
+        <img src="https://logo.clearbit.com/accenture.com" alt="Accenture" className="h-12 w-auto object-contain opacity-70 hover:opacity-100 transition-opacity" />
+        <img src="https://logo.clearbit.com/cognizant.com" alt="Cognizant" className="h-12 w-auto object-contain opacity-70 hover:opacity-100 transition-opacity" />
+        <img src="https://logo.clearbit.com/ibm.com" alt="IBM" className="h-12 w-auto object-contain opacity-70 hover:opacity-100 transition-opacity" />
+        <img src="https://logo.clearbit.com/oracle.com" alt="Oracle" className="h-12 w-auto object-contain opacity-70 hover:opacity-100 transition-opacity" />
+        <img src="https://logo.clearbit.com/adobe.com" alt="Adobe" className="h-12 w-auto object-contain opacity-70 hover:opacity-100 transition-opacity" />
+      </div>
+    </div>
+  </div>
+</section>
 
         <section className="w-full py-12 md:py-24">
           <div className="container px-4 md:px-6">
@@ -129,7 +182,6 @@ const LandingPage = () => {
                   skills.
                 </p>
               </details>
-              {/*  */}
               <details className="p-4 rounded-lg bg-background">
                 <summary className="font-semibold cursor-pointer">
                   What is PrepCraft?
@@ -165,7 +217,7 @@ const LandingPage = () => {
                 <p className="mt-2 text-muted-foreground">
                   No installation is required to get started with DSA, as our
                   built-in code editor is available (laptop only). However, for
-                  development practice, you’ll need to install VS Code and use
+                  development practice, you'll need to install VS Code and use
                   it accordingly .
                 </p>
               </details>
@@ -182,25 +234,204 @@ const LandingPage = () => {
                   level, while product-based companies like Amazon, Adobe, or
                   Atlassian may include tougher, application-based questions.
                   PrepCraft curates practice questions from beginner to advanced
-                  so you’re ready for both. 
+                  so you're ready for both. 
                 </p>
               </details>
-
-              
-               <details className="p-4 rounded-lg bg-background">
+              <details className="p-4 rounded-lg bg-background">
                 <summary className="font-semibold cursor-pointer">
-                  How should I start preparing for Quantitative Aptitude if I’m weak in math?
+                  How should I start preparing for Quantitative Aptitude if I'm weak in math?
                 </summary>
                 <p className="mt-2 text-muted-foreground">
-                  Begin with basics like Number System, Percentages, and Ratios. Focus on formulas, shortcuts, and daily practice before moving to advanced problems. PrepCraft’s step-by-step notes, examples, and quizzes make this easier . 
+                  Begin with basics like Number System, Percentages, and Ratios. Focus on formulas, shortcuts, and daily practice before moving to advanced problems. PrepCraft's step-by-step notes, examples, and quizzes make this easier . 
                 </p>
               </details>
             </div>
           </div>
         </section>
       </main>
+
+      
+
+    {/* Footer Section */}
+      <footer className="w-full border-t bg-background">
+        <div className="container px-4 md:px-6 py-12">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8">
+            {/* Brand Section */}
+            <div className="lg:col-span-1">
+              <Link to="/" className="flex items-center mb-4">
+                <Logo />
+              </Link>
+              <p className="text-sm text-muted-foreground mb-4">
+                PrepCraft.com
+              </p>
+              <p className="text-sm text-muted-foreground mb-4">
+                Your one-stop platform for mastering DSA, Development, and Aptitude for placements.
+              </p>
+              <p className="text-sm text-muted-foreground">
+                © 2025 PrepCraft
+              </p>
+            </div>
+
+            {/* Support Section */}
+            <div>
+              <h3 className="font-semibold mb-4">Support</h3>
+              <ul className="space-y-2">
+                <li>
+                  <Link to="/about" className="text-sm text-muted-foreground hover:text-foreground hover:underline underline-offset-4 transition-colors">
+                    About Us
+                  </Link>
+                </li>
+                <li>
+                  <Link to="/contact" className="text-sm text-muted-foreground hover:text-foreground hover:underline underline-offset-4 transition-colors">
+                    Contact Us
+                  </Link>
+                </li>
+                <li>
+                  <Link to="/privacy" className="text-sm text-muted-foreground hover:text-foreground hover:underline underline-offset-4 transition-colors">
+                    Privacy Policy
+                  </Link>
+                </li>
+                <li>
+                  <Link to="/terms" className="text-sm text-muted-foreground hover:text-foreground hover:underline underline-offset-4 transition-colors">
+                    Terms and Conditions
+                  </Link>
+                </li>
+                <li>
+                  <Link to="/refund" className="text-sm text-muted-foreground hover:text-foreground hover:underline underline-offset-4 transition-colors">
+                    Refund Policy
+                  </Link>
+                </li>
+              </ul>
+            </div>
+
+            {/* Quick Links Section */}
+            <div>
+              <h3 className="font-semibold mb-4">Quick Links</h3>
+              <ul className="space-y-2">
+                <li>
+                  <Link to="/dsa" className="text-sm text-muted-foreground hover:text-foreground hover:underline underline-offset-4 transition-colors">
+                    DSA
+                  </Link>
+                </li>
+                <li>
+                  <Link to="/development" className="text-sm text-muted-foreground hover:text-foreground hover:underline underline-offset-4 transition-colors">
+                    Development
+                  </Link>
+                </li>
+                <li>
+                  <Link to="/aptitude" className="text-sm text-muted-foreground hover:text-foreground hover:underline underline-offset-4 transition-colors">
+                    Aptitude
+                  </Link>
+                </li>
+                <li>
+                  <Link to="/programming-languages" className="text-sm text-muted-foreground hover:text-foreground hover:underline underline-offset-4 transition-colors">
+                    Programming Languages
+                  </Link>
+                </li>
+                <li>
+                  <Link to="/career-development" className="text-sm text-muted-foreground hover:text-foreground hover:underline underline-offset-4 transition-colors">
+                    Career Development
+                  </Link>
+                </li>
+              </ul>
+            </div>
+
+            {/* Resources Section */}
+            <div>
+              <h3 className="font-semibold mb-4">Resources</h3>
+              <ul className="space-y-2">
+                <li>
+                  <Link to="/dsa" className="text-sm text-muted-foreground hover:text-foreground hover:underline underline-offset-4 transition-colors">
+                    Practice Problems
+                  </Link>
+                </li>
+                <li>
+                  <Link to="/dsa" className="text-sm text-muted-foreground hover:text-foreground hover:underline underline-offset-4 transition-colors">
+                    Code Editor
+                  </Link>
+                </li>
+                <li>
+                  <Link to="/aptitude" className="text-sm text-muted-foreground hover:text-foreground hover:underline underline-offset-4 transition-colors">
+                    Aptitude Quizzes
+                  </Link>
+                </li>
+                <li>
+                  <Link to="/dsa" className="text-sm text-muted-foreground hover:text-foreground hover:underline underline-offset-4 transition-colors">
+                    Progress Tracking
+                  </Link>
+                </li>
+              </ul>
+            </div>
+
+            {/* Get In Touch Section */}
+            <div>
+              <h3 className="font-semibold mb-4">Get In Touch</h3>
+              <ul className="space-y-2">
+                <li>
+                  <a 
+                    href="https://instagram.com" 
+                    target="_blank" 
+                    rel="noopener noreferrer" 
+                    className="text-sm text-muted-foreground hover:text-foreground hover:underline underline-offset-4 transition-colors"
+                  >
+                    Instagram
+                  </a>
+                </li>
+                <li>
+                  <a 
+                    href="https://linkedin.com" 
+                    target="_blank" 
+                    rel="noopener noreferrer" 
+                    className="text-sm text-muted-foreground hover:text-foreground hover:underline underline-offset-4 transition-colors"
+                  >
+                    LinkedIn
+                  </a>
+                </li>
+                <li>
+                  <a 
+                    href="https://youtube.com" 
+                    target="_blank" 
+                    rel="noopener noreferrer" 
+                    className="text-sm text-muted-foreground hover:text-foreground hover:underline underline-offset-4 transition-colors"
+                  >
+                    YouTube
+                  </a>
+                </li>
+                <li>
+                  <a 
+                    href="https://twitter.com" 
+                    target="_blank" 
+                    rel="noopener noreferrer" 
+                    className="text-sm text-muted-foreground hover:text-foreground hover:underline underline-offset-4 transition-colors"
+                  >
+                    Twitter
+                  </a>
+                </li>
+                <li>
+                  <a 
+                    href="mailto:support@prepcraft.com" 
+                    className="text-sm text-muted-foreground hover:text-foreground hover:underline underline-offset-4 transition-colors"
+                  >
+                    support@prepcraft.com
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        {/* Bottom Copyright Bar */}
+        <div className="border-t">
+          <div className="container px-4 md:px-6 py-4">
+            <p className="text-center text-sm text-muted-foreground">
+              Copyright © 2025 PrepCraft
+            </p>
+          </div>
+        </div>
+      </footer>
     </div>
   );
 };
+
 
 export default LandingPage;

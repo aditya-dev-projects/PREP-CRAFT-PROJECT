@@ -4,6 +4,10 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import { ThemeProvider } from "@/components/ThemeProvider";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+<<<<<<< HEAD
+=======
+// import ChapterIndex from "./pages/dsa/ChapterIndex";
+>>>>>>> 569dfba04fefcde837291b8a498917015e3ed7df
 import ChapterDetail from "./pages/dsa/ChapterDetail";
 import Auth from "./pages/Auth";
 import NotFound from "./pages/NotFound";
