@@ -25,7 +25,7 @@ const NavHeader = () => {
       <Link to="/" className="flex items-center justify-center">
         <Logo />
       </Link>
-      <nav className="ml-auto hidden md:flex items-center gap-2 sm:gap-6">
+      <nav className="ml-auto hidden md:flex items-center sm:gap-6">
         <Link to="/" className="text-sm p-2  font-medium hover:underline underline-offset-4">
           Home
         </Link>
@@ -38,6 +38,7 @@ const NavHeader = () => {
         <Link to="/aptitude" className="text-sm font-medium hover:underline underline-offset-4">
           Aptitude
         </Link>
+        <Link to='/prepare' className="text-sm p-2 font-medium hover:underline underline-offset-4" >Prepare</Link>
         {/* <Link to="/Fundametals" className="text-sm font-medium hover:underline underline-offset-4">
           Language Fundamentals 
         </Link> */}
