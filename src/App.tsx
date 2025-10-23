@@ -1,69 +1,72 @@
 import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
-import { ThemeProvider } from "@/components/ThemeProvider";
+// import { ThemeProvider } from "@/components/ThemeProvider"; // Assuming you have this
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import ChapterIndex from "./pages/dsa/ChapterIndex";
-import ChapterDetail from "./pages/dsa/ChapterDetail";
-import Auth from "./pages/Auth";
+import { AuthProvider } from "@/hooks/useAuth";
+import { ProtectedRoute } from "@/components/ProtectedRoute";
+import { DashboardLayout } from "@/components/DashboardLayout";
+
+// Lovable Project Pages
+import Landing from "./pages/Landing";
+import Login from "./pages/Login";
+import Signup from "./pages/Signup";
+import Onboarding from "./pages/Onboarding";
+import Dashboard from "./pages/Dashboard";
+import Explore from "./pages/Explore";
+import Learn from "./pages/Learn";
+import Leaderboard from "./pages/Leaderboard";
+import Profile from "./pages/Profile";
 import NotFound from "./pages/NotFound";
-import LandingPage from "./pages/LandingPage";
-import Index from "./pages/Index";
-import ProtectedRoute from "./components/ProtectedRoute";
-import NavHeader from "./components/NavHeader";
-import DevelopmentPage from "./pages/development/DevelopmentPage";
-import AptitudePage from "./pages/aptitude/AptitudePage";
-import AptitudeChapterDetail from "./pages/aptitude/AptitudeChapterDetail";
-import DevelopmentChapterDetail from "./pages/development/DevelopmentChapterDetail";
-import PreparePage from "./pages/dsa/prepare/PreparePage";
-import PrepareChapterDetail from "./pages/dsa/prepare/PrepareChapterDetail";
+
+// Your custom content viewer page
+import ContentPage from "./pages/ContentPage";
 
 const queryClient = new QueryClient();
 
 const App = () => (
   <QueryClientProvider client={queryClient}>
-    <ThemeProvider defaultTheme="dark" storageKey="prepcraft-theme">
+    {/* Assuming you have ThemeProvider - keep it if you do */}
+    {/* <ThemeProvider defaultTheme="dark" storageKey="prepcraft-theme"> */}
       <TooltipProvider>
         <Toaster />
         <Sonner />
         <BrowserRouter>
-          <NavHeader />
-          <Routes>
-            <Route path="/" element={<LandingPage />} />
-            <Route path="/auth" element={<Auth />} />
-            <Route element={<ProtectedRoute />}>
-              <Route path="/development" element={<DevelopmentPage />}>
-                <Route path=":chapterId/:subChapterId" element={<DevelopmentChapterDetail />} />
-                <Route path="quiz/:chapterId" element={<DevelopmentChapterDetail />} />
-                <Route index element={<div className="text-center text-2xl font-bold">Welcome to Development! Select a chapter from the sidebar.</div>} />
+          <AuthProvider> {/* AuthProvider wraps all routes */}
+            <Routes>
+              {/* Public Routes */}
+              <Route path="/" element={<Landing />} />
+              <Route path="/login" element={<Login />} />
+              <Route path="/signup" element={<Signup />} />
 
-              </Route>
-              <Route path="/aptitude" element={<AptitudePage />}>
-                <Route path=":chapterId" element={<AptitudeChapterDetail />} />
-                <Route index element={<div className="text-center text-2xl font-bold">Welcome to Aptitude! Select a chapter from the sidebar.</div>} />
+              {/* Protected Routes */}
+              <Route element={<ProtectedRoute><DashboardLayout /></ProtectedRoute>}>
+                <Route path="/dashboard" element={<Dashboard />} />
+                <Route path="/explore" element={<Explore />} />
+                <Route path="/learn/:subject" element={<Learn />} />
+                <Route path="/leaderboard" element={<Leaderboard />} />
+                <Route path="/profile" element={<Profile />} />
+                <Route path="/onboarding" element={<Onboarding />} />
+
+                {/* Route for displaying your legacy content */}
+                <Route path="/app/content/:subject/:lessonId" element={<ContentPage />} />
+
+                {/* You might not need these old routes anymore if ContentPage handles everything */}
+                {/* <Route path="/development" element={<DevelopmentPage />}> ... </Route> */}
+                {/* <Route path="/aptitude" element={<AptitudePage />} /> ... </Route> */}
+                {/* <Route path="/dsa" element={<Index />}> ... </Route> */}
+                {/* <Route path="/prepare" element={<PreparePage />}> ... </Route> */}
               </Route>
 
-              <Route path="/dsa" element={<Index />}>
-                <Route path="notes/:chapterId/:subChapterId" element={<ChapterDetail />} />
-                <Route path="quiz/:subChapterId" element={<ChapterDetail />} />
-                <Route index element={<div className="text-center text-2xl font-bold">Welcome to DSA! Select a chapter from the sidebar.</div>} />
-              </Route>
-
-              <Route path="/prepare" element={<PreparePage />}>
-                <Route path=":chapterId/:subChapterId" element={<PrepareChapterDetail />} />
-                <Route path="quiz/:chapterId" element={<PrepareChapterDetail />} />
-                <Route index element={<div className="text-center text-2xl font-bold">welcome to Interview preparation for prepare Interview</div>} />
-              </Route>
-              
-            </Route>
-            {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
-            <Route path="*" element={<NotFound />} />
-          </Routes>
+              {/* Catch-all Not Found Route */}
+              <Route path="*" element={<NotFound />} />
+            </Routes>
+          </AuthProvider>
         </BrowserRouter>
       </TooltipProvider>
-    </ThemeProvider>
-  </QueryClientProvider>
+    {/* </ThemeProvider> */}
+   </QueryClientProvider>
 );
 
 export default App;

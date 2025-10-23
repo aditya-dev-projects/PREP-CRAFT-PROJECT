@@ -8,141 +8,84 @@ All colors MUST be HSL.
 
 @layer base {
   :root {
-    --background: 210 100% 6%;
-    --foreground: 213 31% 91%;
-
-    --card: 214 32% 10%;
-    --card-foreground: 213 31% 91%;
-
-    --popover: 214 32% 10%;
-    --popover-foreground: 213 31% 91%;
-
-    --primary: 216, 33.33%, 94.12%; /* This is hols blue changed to white */ 
-    --primary-foreground: 208.42, 100%, 7.45%; /* This is button text colour only */
-    --primary-glow: 217 91% 70%;
-    --heading-foreground: 0 0% 100%; /* This is for all kinds of h2 headings colour  */
-
-
-  --secondary: 214 32% 15%; /* This is light kind of blue*/ 
-    --secondary-foreground: 213 31% 91%;
-
-    --muted: 214 32% 15%;   /* Secondary and this muted is same */
-    --muted-foreground: 217 10% 64%;
-
-    --accent: 196.88, 30.77%, 20.39%; /* Updated now just from this 5593F7 and this is only sidebar hovering colour from chapters block*/
-    --accent-foreground: 216, 33.33%, 94.12%;
-
-    --destructive: 0 75% 60%;
-    --destructive-foreground: 210 100% 6%;
-
-    --border: 214 32% 20%;
-    --input: 214 32% 15%;
-    --ring: 217 91% 60%;
-
-    /* Study motivation colors */
-    --success: 120 60% 50%;
-    --success-foreground: 0 0% 100%;
-    --warning: 45 100% 60%;
-    --warning-foreground: 0 0% 100%;
-    --info: 200 100% 60%;
-    --info-foreground: 0 0% 100%;
-
-    /* Progress colors */
-    --progress-easy: 120 60% 50%;
-    --progress-medium: 45 100% 60%;
-    --progress-hard: 0 60% 50%;
-
-    /* Gradients */
-    --gradient-primary: linear-gradient(135deg, hsl(217 91% 60%), hsl(217 91% 70%));
-    --gradient-accent: linear-gradient(135deg, hsl(217 91% 65%), hsl(214 32% 15%));
-    --gradient-success: linear-gradient(135deg, hsl(120 60% 50%), hsl(217 91% 60%));
-
-    /* Shadows */
-    --shadow-glow: 0 10px 30px -10px hsl(217 91% 60% / 0.5);
-    --shadow-accent: 0 10px 20px -5px hsl(217 91% 65% / 0.3);
-
-    --radius: 0.5rem;
-
-    --sidebar-background: 0 0% 98%;
-    --sidebar-foreground: 240 5.3% 26.1%;
-    --sidebar-primary: 240 5.9% 10%;
-    --sidebar-primary-foreground: 0 0% 98%;
-    --sidebar-accent: 217 91% 60%;
-    --sidebar-accent-foreground: 0 0% 100%;
-    --sidebar-border: 220 13% 91%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
-
-    :root {
-  
-  
-  /* Quiz-specific colors */
-  --quiz-option-selected: 217 91% 60%; /* Bright blue for selected */
-  --quiz-option-selected-foreground: 0 0% 100%; /* White text */
-  --quiz-option-hover: 217 91% 50%; /* Slightly darker blue for hover */
-}
-  }
-
-  .light {
     --background: 0 0% 100%;
-    --foreground: 214 32% 15%;
-    --heading-foreground: 224 44% 11%;
-    --body-foreground: 225 15% 26%;
+    --foreground: 224 71% 4%;
 
     --card: 0 0% 100%;
-    --card-foreground: 214 32% 15%;
+    --card-foreground: 224 71% 4%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 214 32% 15%;
+    --popover-foreground: 224 71% 4%;
 
-    --primary: 208.42, 100%, 7.45%;  /* Button in light mode */
-    --primary-foreground:216, 33.33%, 94.12%; /* Button text colour only  */
-    --primary-glow: 217 91% 70%;
-    --heading-foreground: 208.42, 100%, 7.45%;  /* h2 headings colour  */
+    --primary: 239 84% 67%;
+    --primary-foreground: 0 0% 100%;
 
-    --secondary: 217 32% 94%;
-    --secondary-foreground: 214 32% 15%;
+    --secondary: 220 14% 96%;
+    --secondary-foreground: 224 71% 4%;
 
-    --muted: 217 32% 94%;
-    --muted-foreground: 217 10% 30%;
+    --muted: 220 14% 96%;
+    --muted-foreground: 220 9% 46%;
 
-    --accent: 210.97, 100%, 6.08%;
+    --accent: 43 96% 56%;
     --accent-foreground: 0 0% 100%;
 
-    --destructive: 0 75% 60%;
+    --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 217 32% 85%;
-    --input: 217 32% 85%;
-    --ring: 217 91% 60%;
+    --success: 142 76% 36%;
+    --success-foreground: 0 0% 100%;
 
-    --sidebar-background: 240 5.9% 10%;
-    --sidebar-foreground: 240 4.8% 95.9%;
-    --sidebar-primary: 224.3 76.3% 48%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 240 3.7% 15.9%;
-    --sidebar-accent-foreground: 240 4.8% 95.9%;
-    --sidebar-border: 240 3.7% 15.9%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    --border: 220 13% 91%;
+    --input: 220 13% 91%;
+    --ring: 239 84% 67%;
+
+    --radius: 0.75rem;
+
+    --chart-1: 239 84% 67%;
+    --chart-2: 43 96% 56%;
+    --chart-3: 142 76% 36%;
+    --chart-4: 280 65% 60%;
+    --chart-5: 340 82% 52%;
   }
 
-  /* ✅ Sidebar hover styles - Dark mode readability fix */
-  .sidebar-item {
-    @apply transition-colors duration-200;
-    color: hsl(var(--sidebar-foreground));
-  }
-  .sidebar-item:hover {
-    background-color: hsl(var(--sidebar-accent));
-    color: hsl(var(--sidebar-accent-foreground)); /* Text becomes visible */
-  }
+  .dark {
+    --background: 224 71% 4%;
+    --foreground: 210 40% 98%;
 
-.light {
-  /* ... existing variables ... */
-  
-  /* Quiz-specific colors */
-  --quiz-option-selected: 217 91% 60%; /* Same bright blue for border */
-  --quiz-option-selected-foreground: 214 32% 15%; /* Dark text for light mode */
-  --quiz-option-hover: 217 91% 60%; /* Same blue for hover border */
-}
+    --card: 224 71% 6%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 224 71% 4%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 239 84% 67%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 220 17% 17%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 220 17% 17%;
+    --muted-foreground: 220 9% 65%;
+
+    --accent: 43 96% 56%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 63% 31%;
+    --destructive-foreground: 210 40% 98%;
+
+    --success: 142 76% 36%;
+    --success-foreground: 0 0% 100%;
+
+    --border: 220 17% 17%;
+    --input: 220 17% 17%;
+    --ring: 239 84% 67%;
+
+    --chart-1: 239 84% 67%;
+    --chart-2: 43 96% 56%;
+    --chart-3: 142 76% 36%;
+    --chart-4: 280 65% 60%;
+    --chart-5: 340 82% 52%;
+  }
 }
 
 @layer base {
@@ -152,73 +95,5 @@ All colors MUST be HSL.
 
   body {
     @apply bg-background text-foreground;
-    font-size: 16px;
-    line-height: 1.6;
   }
-
-  h1, h2, h3, h4, h5, h6 {
-    @apply font-bold;
-  }
-
-  h1 {
-    @apply text-4xl mt-8 mb-4;
-  }
-
-  h2 {
-    @apply text-3xl mt-6 mb-3;
-  }
-
-    /* ✅ Override only h2 elements that use text-primary-foreground */
-  h2.text-primary-foreground {
-    @apply text-heading-foreground;
-  }
-
-  h3 {
-    @apply text-2xl mt-4 mb-2;
-  }
-
-  p, ul, ol {
-    @apply mb-4;
-  }
-}
-/* Sidebar item hover & active fix */
-
-/* Default (light mode) */
-.sidebar-item:hover {
-  background-color: hsl(var(--sidebar-accent));
-  color: hsl(var(--sidebar-accent-foreground)) !important;
-}
-
-.sidebar-item.active {
-  background-color: hsl(var(--sidebar-accent));
-  color: hsl(var(--sidebar-accent-foreground)) !important;
-}
-
-/* Dark mode override */
-.dark .sidebar-item:hover {
-  background-color: hsl(var(--sidebar-accent));
-  color: hsl(var(--sidebar-accent-foreground)) !important;
-}
-
-.dark .sidebar-item.active {
-  background-color: hsl(var(--sidebar-accent));
-  color: hsl(var(--sidebar-accent-foreground)) !important;
-}
-
-@keyframes scroll-left {
-  0% {
-    transform: translateX(0);
-  }
-  100% {
-    transform: translateX(-50%);
-  }
-}
-
-.logo-slider {
-  display: flex;
-  width: max-content;
-}
-
-.logo-slider:hover {
-  animation: scroll-left 30s linear infinite;
 }
