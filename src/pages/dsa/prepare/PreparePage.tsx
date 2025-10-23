@@ -2,7 +2,7 @@
 
 import React from 'react';
 import { Outlet } from 'react-router-dom';
-import PrepareSidebar from '../../components/PrepareSidebar'; // Adjust this path if needed
+import PrepareSidebar from '../../../components/PrepareSidebar';
 
 /**
  * This component serves as the main layout for the entire "Prepare" course section.

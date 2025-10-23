@@ -46,8 +46,8 @@ export const developmentCourse: { title: string; chapters: Chapter[] } = {
         { id: '2.3', title: 'Git Basics (Init, Add, Commit, Status, Log)', file: '03-Git-Basics' },
         { id: '2.4', title: 'Working with Branches & Merging', file: '04-Working-with-Branches-and-Merging' },
         { id: '2.5', title: 'GitHub Introduction & Account Setup', file: '05-GitHub-Introduction-and-Account-Setup' },
-        { id: '2.6', title: 'Remote Repositories (Push, Pull, Clone, Fetch)', file: '06-Remote-Repositories-(Push-Pull-Clone-Fetch)' },
-        { id: '2.7', title: 'Collaboration Workflows (Forks, Pull Requests, Issues)', file: '07-Collaboration-Workflows-(Forks-Pull-Requests-Issues)' },
+        { id: '2.6', title: 'Remote Repositories (Push, Pull, Clone, Fetch)', file: '06-Remote-Repositories' },
+        { id: '2.7', title: 'Collaboration Workflows (Forks, Pull Requests, Issues)', file: '07-Collaboration-Workflows' },
         { id: '2.8', title: 'Git Best Practices & .gitignore', file: '08-Git-Best-Practices-and-gitignore' }
       ] 
     },

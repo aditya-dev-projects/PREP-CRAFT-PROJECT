@@ -6,7 +6,7 @@ import { prepareCourse } from '@/data/prepareCourse'; // Assuming alias is set u
 import SkeletonLoader from '@/components/SkeletonLoader'; // A simple loading component
 
 // Vite's glob import feature. This path must exactly match your folder structure.
-const modules = import.meta.glob('/src/pages/prepare/chapters/**/*.tsx');
+const modules = import.meta.glob('/src/pages/dsa/prepare/chapters/**/*.tsx');
 
 const PrepareChapterDetail: React.FC = () => {
   const { chapterId, subChapterId } = useParams<{
@@ -29,7 +29,7 @@ const PrepareChapterDetail: React.FC = () => {
   // Dynamically select the component to render based on the file path.
   const ContentComponent = useMemo(() => {
     if (chapter && subChapter) {
-      const filePath = `/src/pages/prepare/chapters/${chapter.folder}/${subChapter.file}.tsx`;
+      const filePath = `/src/pages/dsa/prepare/chapters/${chapter.folder}/${subChapter.file}.tsx`;
 
       if (modules[filePath]) {
         return lazy(modules[filePath] as () => Promise<{ default: React.ComponentType<any> }>);
